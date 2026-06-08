@@ -12,3 +12,7 @@ class city:
             self.demographics = demographics
     def add_facility(self, facility_name):
         self.facilities.append(facility_name)
+    def add_demographics(self, group_names, population):
+        self.demographics.update(group_names, population)
+        
+        
