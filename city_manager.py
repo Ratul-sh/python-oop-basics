@@ -10,3 +10,5 @@ class city:
             self.demographics = {}
         else:
             self.demographics = demographics
+    def add_facility(self, facility_name):
+        self.facilities.append(facility_name)
