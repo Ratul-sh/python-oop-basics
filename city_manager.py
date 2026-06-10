@@ -37,7 +37,7 @@ while True:
         City.add_city(a, b)
         print("congratulations. Your City Has Beeen added")
         # print(City.city_summery(City.city_database[a]))
-        print(City.city_database[a].city_summery())
+        print(City.city_database[a].city_summary())
     elif x == 2:
         select_city_for_facility = str(input('Enter The City Name: ')).lower()
         select_facility = str(input("Enter The Facility You Want to input: ")).capitalize()
