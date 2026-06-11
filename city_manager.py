@@ -26,11 +26,30 @@ class City:
     def add_city(cls, name, country):
         cls(name, country)
 
-        
+# --- TESTING AREA ---
+
+City("Khulna", "Bangladesh")
+City("New York", "USA")
+City("London", "UK", ["Park"], {"Male": 5000000})
+City("Peris", "France")
+# # print(khulna.name)           # Expected output: Khulna
+# # print(khulna.facilities)     # Expected output: []
+
+# khulna = City("Khulna", "Bangladesh")
+# khulna.add_facility("Hospital")
+# khulna.add_facility("Park")
+# # print(khulna.facilities)
+
+# khulna.add_demographic("Male", 50000)
+# # print(khulna.demographics)   # Expected output: {'Male': 50000}
+
+# # print(City.city_summery(khulna))
+
+    
 while True:
     available_Cities = list(City.city_database.keys())
-    print("Wwelcome To The System.\nThese Are The Current City.\n\n", available_Cities)
-    x = int(input("What Do You Want to Do?\n\n1. Add A City?\n2. Add Facility\n3. Add Demographic\n4. View Summary\n5. Delete a City\n6. Exit\n\n"))
+    print("Welcome To The System.\nThese Are The Current City.\n", available_Cities)
+    x = int(input("What Do You Want to Do?\n1. Add A City?\n2. Add Facility\n3. Add Demographic\n4. View Summary\n5. Delete a City\n6. Exit\n\n"))
     if x == 1:
         a = str(input("Enter The City Name: ")).lower()
         b = str(input("Enter The Country Name: "))
@@ -40,7 +59,7 @@ while True:
         print(City.city_database[a].city_summary())
     elif x == 2:
         select_city_for_facility = str(input('Enter The City Name: ')).lower()
-        select_facility = str(input("Enter The Facility You Want to input: ")).capitalize()
+        select_facility = str(input("Enter The Facility You Want to input: "))
         # City.add_facility(City.city_database[select_city], select_facility)
         if select_city_for_facility in City.city_database:
             City.city_database[select_city_for_facility].add_facility(select_facility)
@@ -76,18 +95,4 @@ while True:
         print('You Gave Wrong input. Choose from the Number 1 - 6')
 
 
-# --- TESTING AREA ---
 
-City("Khulna", "Bangladesh")
-# # print(khulna.name)           # Expected output: Khulna
-# # print(khulna.facilities)     # Expected output: []
-
-# khulna = City("Khulna", "Bangladesh")
-# khulna.add_facility("Hospital")
-# khulna.add_facility("Park")
-# # print(khulna.facilities)
-
-# khulna.add_demographic("Male", 50000)
-# # print(khulna.demographics)   # Expected output: {'Male': 50000}
-
-# # print(City.city_summery(khulna))
